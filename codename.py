@@ -1,4 +1,5 @@
 from random import choice
+from sys import argv
 
 FIRST_HALF = ['colours',
                 'dates',
@@ -43,5 +44,10 @@ def generate_multiple_codenames(amount):
     return codenames
     
 if __name__ == "__main__":
-    for codename in generate_multiple_codenames(5):
-        print codename
+    try:
+        for codename in generate_multiple_codenames(int(argv[1])):
+            print codename
+    except IndexError:
+        print generate_codename()
+    except:
+        print "Invalid argument: {0}".format(argv[1])

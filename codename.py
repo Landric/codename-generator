@@ -33,7 +33,15 @@ def generate_codename():
     with open('text/{0}.txt'.format(second_file)) as file:
         second_part = choice(file.readlines()).upper()
         
-    print "{0} {1}".format(first_part, second_part).replace('\n', '')
+    return "{0} {1}".format(first_part, second_part).replace('\n', '')
+    
+def generate_multiple_codenames(amount):
+    codenames = []
+    for i in range(amount):
+        codenames.append(generate_codename())
+        
+    return codenames
     
 if __name__ == "__main__":
-    generate_codename()
+    for codename in generate_multiple_codenames(5):
+        print codename

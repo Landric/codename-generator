@@ -12,6 +12,7 @@ SECOND_HALF = ['colours',
                 'herbs_spices',
                 'fruits_vegetables',
                 'minerals',
+                'numbers',
             ]
             
             
